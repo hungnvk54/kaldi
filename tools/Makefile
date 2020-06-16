@@ -9,7 +9,7 @@ WGET ?= wget
 
 # Note: OpenFst requires a relatively recent C++ compiler with C++11 support,
 # e.g. g++ >= 4.7, Apple clang >= 5.0 or LLVM clang >= 3.3.
-OPENFST_VERSION ?= 1.6.7
+OPENFST_VERSION ?= 1.7.7
 CUB_VERSION ?= 1.8.0
 OPENBLAS_VERSION ?= 0.3.5
 SCTK_VERSION_PARTIAL ?= 2.4.10

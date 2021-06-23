@@ -73,12 +73,12 @@ openfst-$(OPENFST_VERSION)/lib: | openfst-$(OPENFST_VERSION)/Makefile
 # "file too big".
 ifeq ($(OSTYPE),cygwin)
   # Note: OSTYPE path is probably dead for latest cygwin64 (installed on 2016/11/11).
-  openfst_add_CXXFLAGS = -g -O2 -Wa,-mbig-obj
+  openfst_add_CXXFLAGS = -g -O3 -msse2 -Wa,-mbig-obj
 else ifeq ($(OS),Windows_NT)
   # This new OS path is confirmed working on Windows 10 / Cygwin64.
-  openfst_add_CXXFLAGS = -g -O2 -Wa,-mbig-obj
+  openfst_add_CXXFLAGS = -g -O3 -msse2 -Wa,-mbig-obj
 else
-  openfst_add_CXXFLAGS = -g -O2
+  openfst_add_CXXFLAGS = -g -O3 -msse2
 endif
 
 openfst-$(OPENFST_VERSION)/Makefile: openfst-$(OPENFST_VERSION)

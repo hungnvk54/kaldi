@@ -145,7 +145,7 @@ struct OnlineEndpointConfig {
   /// rule4 times out after 2.0 seconds of silence after decoding something,
   /// even if we did not reach a final-state at all.
   OnlineEndpointRule rule4;
-  /// rule5 times out after the utterance is 20 seconds long, regardless of
+  /// rule5 times out after the utterance is 10 seconds long, regardless of
   /// anything else.
   OnlineEndpointRule rule5;
 
@@ -154,7 +154,7 @@ struct OnlineEndpointConfig {
       rule2(true, 0.5, 2.0, 0.0),
       rule3(true, 1, 8, 0.0), //rule3(true, 1.0, 8.0, 0.0),
       rule4(true, 0.3, std::numeric_limits<BaseFloat>::infinity(), 10.0), //rule4(true, 2.0, std::numeric_limits<BaseFloat>::infinity(), 0.0),
-      rule5(false, 0.0, std::numeric_limits<BaseFloat>::infinity(), 15.0) { } //rule5(false, 0.0, std::numeric_limits<BaseFloat>::infinity(), 20.0) { }
+      rule5(false, 0.0, std::numeric_limits<BaseFloat>::infinity(), 10.0) { } //rule5(false, 0.0, std::numeric_limits<BaseFloat>::infinity(), 20.0) { }
 
   void Register(OptionsItf *opts) {
     opts->Register("endpoint.silence-phones", &silence_phones, "List of phones "
